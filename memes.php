@@ -19,11 +19,11 @@
             </header>
             
             <div class="dashboard">
-                <img src="sad_pepe.png" id= "button_no" class="button"></img>
+                <img src="" id= "button_no" class="button"></img>
                 <div class="boxaroo">
                     <img class="meme" src=""/>
                 </div>
-                <img src="happy_pepe.png" id="button_yes" class="button"></img>
+                <img src="" id="button_yes" class="button"></img>
             </div>
         </div>
     </body>

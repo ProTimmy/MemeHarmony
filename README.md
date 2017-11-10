@@ -1,7 +1,7 @@
 # MemeHarmony
 It's True Love, My Dudes™®©
 
-##TODO:
+## TODO:
  - Front-end
  - Back-end
  - Server
