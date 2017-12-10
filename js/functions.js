@@ -1,11 +1,11 @@
 var criticalSection = false;
 var lastValues = {};
+var apiKey = 'AIzaSyA5eT5cmEVop6msDBtveV6g0t4HyVRIGbM';
 
 function getImages(imageArray, callback) {
     if(!criticalSection) {
         criticalSection = true;
         last = lastValues;
-        console.log(last);
 
         $.ajax('reddit.php', {
             type: 'GET',
@@ -14,7 +14,6 @@ function getImages(imageArray, callback) {
                 after: last
             },
             success: function(data, status, xhr) {
-                console.log(data);
                 for(var i = 0, len = data.length; i < len - 1; i++) {
                     subreddit = data[i];
                     for(var j = 0, children = subreddit.data.children.length; j < children; j++) {
@@ -27,7 +26,6 @@ function getImages(imageArray, callback) {
                 }
 
                 lastValues = data[i];
-                console.log(lastValues);
 
                 imageArray = imageArray.sort();
                 imageArray = imageArray.reverse();
@@ -40,20 +38,32 @@ function getImages(imageArray, callback) {
 }
 
 function imageAnalyze(imgURL) {
-    var request = '{"requests": [{"image": {"source": {"imageUri": "' + imgURL + '"}},"features": [{"type": "LANDMARK_DETECTION","maxResults": 1},{"type": "WEB_DETECTION","maxResults": 2}]}]}';
+    var request = {
+		"requests": [{
+			"image": {
+				"source": {
+					"imageUri": imgURL
+				}
+			},"features": [{
+				"type": "LANDMARK_DETECTION","maxResults": 1},{
+				"type": "WEB_DETECTION","maxResults": 2
+			}]
+		}]
+	};
 
-    $.ajax('vision.php', {
+    $.ajax({
         type: 'POST',
-        dataType: 'json',
-        data: {
-            resource: request
-        },
+		url: 'https://vision.googleapis.com/v1/images:annotate?fields=responses&key=' + apiKey,
+        // dataType: 'json',
+        data: JSON.stringify(request),
+		headers: {
+	      "Content-Type": "application/json",
+	    },
         success: function(data, status, xhr) {
-            console.log(status);
+			// TODO: Extract keywords and add to profile
             console.log(data);
         }
     });
-    //console.log(JSON.parse(test));
 }
 
 function shuffle(array) {

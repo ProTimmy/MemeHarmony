@@ -1,4 +1,5 @@
 <?php
+
 $subreddit = array("wholesomememes", "memes");
 $response = array();
 $last = json_decode($_GET["after"], true);
@@ -19,4 +20,5 @@ foreach($subreddit as $page) {
 $response[] = json_encode($last);
 
 echo json_encode($response);
+
 ?>
