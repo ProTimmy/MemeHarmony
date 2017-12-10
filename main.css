@@ -50,6 +50,11 @@ button:hover{
     border-width: medium;
 }
 
+/* Login and Register */
+#register {
+	display: none;
+}
+
 .twobutton{
     width: 50%;
     height: 10%;

@@ -2,8 +2,15 @@
 <html>
 	<head>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/4.6.1/firebase.js"></script>
+	    <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/4.6.0/firebase-database.js"></script>
+
+		<script src="js/firebase.js"></script>
+		<script src="js/script.js"></script>
 		<script src="js/functions.js"></script>
 		<script src="js/memes.js"></script>
+
 		<link rel="stylesheet" href="main.css">
 	</head>
 	<body>
@@ -14,8 +21,8 @@
             <label><b>Username:  <input type="text" class="textinput" placeholder="Username" name="uname"></b></label>
             <label><b>Password:  <input type="password" class="textinput" placeholder="********" name="psw"></b></label>
 
-			<button type="submit" class="twobutton">Login</button>
-			<button type="button" class="twobutton">Register</button>
+			<button type="submit" class="twobutton" id="login_button">Login</button>
+			<button type="button" class="twobutton" id="register_button">Register</button>
         </div>
 		<div class="form" id="register">
             <label><b>Username:  <input type="text" placeholder="Enter Username" name="uname"></b></label>
@@ -28,7 +35,8 @@
                 <input type="checkbox" > Male
                 <input type="checkbox" > Female
             </div>
-            <a href = memes.html></a><button type="submit" class = "button_register" onclick="location.href='memes.html'">Register</button>
+			<button type="submit" class="twobutton" id="login_button">Login</button>
+			<button type="button" class="twobutton" id="register_button">Register</button>
         </div>
 	</body>
 </html>
