@@ -115,12 +115,12 @@ h2, h3, h4, h5{
     line-height: 1.3;
 }
 
-label[for='textboxes'] { /* Fucking with the checkboxes */
+label {
     font-size: 32px;
     padding: none;
-    border: hidden;
-   /*background-color: #f0ff28;
-    color: #A67A23;*/
+    border: none;
+    background-color: #f0ff28;
+    color: #A67A23;
     display: inline-block;
     width: 50%;
     text-align: center;
@@ -128,7 +128,7 @@ label[for='textboxes'] { /* Fucking with the checkboxes */
     font-style: normal;
     box-shadow: 5px 5px 5px grey;
     margin-bottom: 2%;
-    /*border-radius: 25px;*/
+    border-radius: 25px;
     text-align: center;
 }
 
@@ -238,13 +238,6 @@ h6{
     text-align: center;
 }
 
-.myCheckbox{
-    font-family: 'Helvetica', 'Arial', sans-serif;
-    color: #b35900;
-}
-
-.divider{
-    width:5px;
-    height:auto;
-    display:inline-block;
+.checked{
+    
 }

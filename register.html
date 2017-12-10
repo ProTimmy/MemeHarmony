@@ -2,7 +2,7 @@
 
     <img src = "MemeHarmonyLogo.png" alt = "frog">
     
-    <link rel="stylesheet" href="MemeHarmony.css">
+    <link rel="stylesheet" href="main.css">
     
    <!-- <header>
         <a href memes.html></a><button type="button" disabled>Memes</button><a href dreams.html></a><button type="button" disabled>Dreams</button>
@@ -11,20 +11,26 @@
     <form action="/*******filler*********.php">
 
         <div class="container">
-            <label><b>Username:  <input type="text" placeholder="Enter Username" name="uname" required></b></label>
+            <label for='textboxes'><b>Username:  <input type="text" placeholder="Enter Username" name="uname" required></b></label>
             <!--<input type="text" placeholder="Enter Username" name="uname" required>-->
 
-            <label><b>Password:  <input type="password" placeholder="Enter Password" name="psw" required></b></label>
+            <label for='textboxes'><b>Password:  <input type="password" placeholder="Enter Password" name="psw" required></b></label>
             <!--<input type="password" placeholder="Enter Password" name="psw" required>-->
             
-            <div> I am a:
-                <input type="checkbox" > Male
-                <input type="checkbox" > Female
+            <div> 
+                <label class = "myCheckbox">
+                    I am a:
+                    <input type="checkbox" > Male
+                    <input type="checkbox" > Female
+                </label>
             </div>
             
-            <div>Looking for a:
-                <input type="checkbox" > Male
-                <input type="checkbox" > Female
+            <div>
+                <label class = "myCheckbox">
+                    Looking for a:
+                    <input type="checkbox" > Male
+                    <input type="checkbox" > Female
+                </label>
             </div>
             
             <a href = memes.html></a><button type="submit" class = "button_register" onclick="location.href='memes.html'">Register</button>
