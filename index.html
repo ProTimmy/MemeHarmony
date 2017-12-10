@@ -5,6 +5,7 @@
 		<script src="https://www.gstatic.com/firebasejs/4.6.1/firebase.js"></script>
 	    <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase-app.js"></script>
 		<script src="https://www.gstatic.com/firebasejs/4.6.0/firebase-database.js"></script>
+		<script src="js/sha256.js"></script>
 
 		<script src="js/firebase.js"></script>
 		<script src="js/script.js"></script>
@@ -17,26 +18,32 @@
 		<header>
 			<img src = "MemeHarmonyLogo.png" alt = "frog">
 		</header>
-        <div class="form" id="login">
-            <label><b>Username:  <input type="text" class="textinput" placeholder="Username" name="uname"></b></label>
-            <label><b>Password:  <input type="password" class="textinput" placeholder="********" name="psw"></b></label>
+		<div class="form_container">
+	        <div class="form" id="login">
+	            <label><b>Username:  <input type="text" class="textinput" placeholder="Username" name="uname"></b></label>
+	            <label><b>Password:  <input type="password" class="textinput" placeholder="********" name="psw"></b></label>
 
-			<button type="submit" class="twobutton" id="login_button">Login</button>
-			<button type="button" class="twobutton" id="toRegister">Register</button>
-        </div>
-		<div class="form" id="register">
-            <label><b>Username:  <input type="text" placeholder="Enter Username" name="uname"></b></label>
-            <label><b>Password:  <input type="password" placeholder="Enter Password" name="psw"></b></label>
-            <div> I am a:
-                <input type="checkbox" > Male
-                <input type="checkbox" > Female
-            </div>
-            <div>Looking for a:
-                <input type="checkbox" > Male
-                <input type="checkbox" > Female
-            </div>
-			<button type="submit" class="twobutton" id="toLogin">Login</button>
-			<button type="button" class="twobutton" id="register_button">Register</button>
-        </div>
+				<button type="submit" class="twobutton" id="login_button">Login</button>
+				<button type="button" class="twobutton" id="toRegister">Register</button>
+	        </div>
+			<div class="form" id="register">
+	            <label><b>Username:  <input type="text" placeholder="Enter Username" name="uname" id="register_username"></b></label>
+	            <label><b>Password:  <input type="password" placeholder="Enter Password" name="psw" id="register_password"></b></label>
+	            <div> I am a:
+	                <input type="radio" name="gen" value="male"> Male
+	                <input type="radio" name="gen" value="female"> Female
+	            </div>
+	            <div>Looking for a:
+	                <input type="checkbox" name="pref" value="male"> Male
+	                <input type="checkbox" name="pref" value="female"> Female
+	            </div>
+				<button type="submit" class="twobutton" id="toLogin">Login</button>
+				<button type="button" class="twobutton" id="register_button">Register</button>
+	        </div>
+			<div class="log" id="form_log">
+				<!-- Error Log -->
+				<p class="log_text">Something</p>
+			</div>
+		</div>
 	</body>
 </html>
