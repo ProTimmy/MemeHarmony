@@ -1,27 +1,34 @@
+<!DOCTYPE html>
 <html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="js/functions.js"></script>
+		<script src="js/memes.js"></script>
+		<link rel="stylesheet" href="main.css">
+	</head>
+	<body>
+		<header>
+			<img src = "MemeHarmonyLogo.png" alt = "frog">
+		</header>
+        <div class="form" id="login">
+            <label><b>Username:  <input type="text" class="textinput" placeholder="Username" name="uname"></b></label>
+            <label><b>Password:  <input type="password" class="textinput" placeholder="********" name="psw"></b></label>
 
-    <img src = "MemeHarmonyLogo.png" alt = "frog">
-    
-    <link rel="stylesheet" href="MemeHarmony.css">
-    
-    <!--<header>
-        <a href memes.html></a><button type="button" disabled>Memes</button><a href dreams.html></a><button type="button" disabled>Dreams</button>
-    </header>
-    >-->
-    
-    <form action="/*******filler*********.php">
-
-        <div class="container">
-            <label><b>Username:  <input type="text" class = "textinput" placeholder="Username" name="uname" required></b></label>
-            <!--<input type="text" class = "textinput" placeholder="Username" name="uname" required>-->
-            <label><b>Password:  <input type="password" class = "textinput" placeholder="********" name="psw" required></b></label>
-            <!--<input type="password" class = "textinput" placeholder="Password" name="psw" required>-->
-            
+			<button type="submit" class="twobutton">Login</button>
+			<button type="button" class="twobutton">Register</button>
         </div>
-            <a href memes.html></a><button type="submit" class="twobutton" onclick="location.href='memes.html'">Login</button><a href register.html></a><button type = "button" class = "twobutton" onclick="location.href='register.html'">Register</button>
-
-
-    </form>
-    
+		<div class="form" id="register">
+            <label><b>Username:  <input type="text" placeholder="Enter Username" name="uname"></b></label>
+            <label><b>Password:  <input type="password" placeholder="Enter Password" name="psw"></b></label>
+            <div> I am a:
+                <input type="checkbox" > Male
+                <input type="checkbox" > Female
+            </div>
+            <div>Looking for a:
+                <input type="checkbox" > Male
+                <input type="checkbox" > Female
+            </div>
+            <a href = memes.html></a><button type="submit" class = "button_register" onclick="location.href='memes.html'">Register</button>
+        </div>
+	</body>
 </html>
-        
