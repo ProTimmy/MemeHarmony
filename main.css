@@ -83,7 +83,6 @@ button:hover{
 
 .container {
     background-color: #E8E8E8; 
-    /*object-position: center;*/
     color:#4B9CD3;
     margin-bottom: 2%;
     text-align: center;
@@ -93,18 +92,15 @@ form {
     background-color: #E8E8E8;
     color: #4B9CD3;
     margin-bottom: 2%;
-    /*object-position: center;*/
 }
 
 body {
     background: #E8E8E8;
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.06);
     color: rgb(230,0,0);
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 16px;
     line-height: 1.5;
     margin: 0 auto;
-    /*max-width: 800px;*/
     padding: 2em 2em 4em;
     margin-bottom: 2%;
     text-align: center;
@@ -157,16 +153,12 @@ label[for='textboxes'] { /* Fucking with the checkboxes */
     font-size: 32px;
     padding: none;
     border: hidden;
-   /*background-color: #f0ff28;
-    color: #A67A23;*/
     display: inline-block;
     width: 50%;
     text-align: center;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-style: normal;
-    box-shadow: 5px 5px 5px grey;
     margin-bottom: 2%;
-    /*border-radius: 25px;*/
     text-align: center;
 }
 
@@ -194,8 +186,6 @@ input {
     padding: 0;
     border: none;
     margin-bottom: 2%;
-    /*align-self: center;
-    align-items: center;*/
     text-align: center;
     border-radius: 25px;
     font-size: 20px;
@@ -211,14 +201,11 @@ input {
     width: 30%;
     height: 5%;
     margin-bottom: 2%;
-    /*align-self: center;
-    align-items: center;*/
     border-radius: 25px;
     text-align: center;
 }
 
 img {
-    /*animation: colorize 2s cubic-bezier(0, 0, .78, .36) 1;*/
     background: transparent;
     display: block;
     max-width: 95%;
@@ -260,7 +247,6 @@ ul.a{
 li{
     border: none;
     border-radius: 25px;
-    /*border-style: double;*/
     font-size: 50px;
 }
 
@@ -278,8 +264,21 @@ h6{
 
 .myCheckbox{
     font-family: 'Helvetica', 'Arial', sans-serif;
-    color: rgb(230, 0, 0);
+    color: #ffffff;
     font-size: 18px;
+    border: double;
+    border-radius: 25px;
+    padding: none;
+    border: hidden;
+    background-color: rgb(230, 0, 0);
+    display: inline-block;
+    width: 50%;
+    text-align: center;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-style: normal;
+    box-shadow: 5px 5px 5px grey;
+    margin-bottom: 2%;
+    text-align: center;
 }
 
 .divider{
