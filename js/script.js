@@ -1,19 +1,11 @@
 $(document).ready(function() {
-	$('#register_button').click(function() {
-		if($('.form#register').css("display") == "none") {
-			$('.form#login').css("display", "none");
-			$('.form#register').css("display", "inline-block");
-		} else {
-
-		}
+	$('#toRegister').click(function() {
+		$('.form#login').hide();
+		$('.form#register').show();
 	});
 
-	$('#login_button').click(function() {
-		if($('.form#login').css("display") == "none") {
-			$('.form#register').css("display", "none");
-			$('.form#login').css("display", "inline-block");
-		} else {
-
-		}
+	$('#toLogin').click(function() {
+		$('.form#register').hide();
+		$('.form#login').show();
 	});
 });
