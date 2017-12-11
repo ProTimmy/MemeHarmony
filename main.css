@@ -210,10 +210,11 @@ body {
     100%{background-position:0% 82%}
 }
 
-h2, h3, h4{
+h3{
     color: #222;
     font-weight: 600;
     line-height: 1.3;
+    margin: 10px;
 }
 
 label[for='textboxes'] { /* Fucking with the checkboxes */
