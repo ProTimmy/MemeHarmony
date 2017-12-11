@@ -47,7 +47,7 @@ function imageAnalyze(imgURL) {
 			},"features": [
 				{"type": "LANDMARK_DETECTION","maxResults": 1},
 				{"type": "WEB_DETECTION","maxResults": 2},
-				{"type": "TEXT_DETECTION", "maxResults": 1}
+				{"type": "LOGO_DETECTION", "maxResults": 1}
 			]
 		}]
 	};
@@ -62,10 +62,39 @@ function imageAnalyze(imgURL) {
 	    },
         success: function(data, status, xhr) {
 			// TODO: Extract keywords and add to profile
+			var tags = [];
 			database.ref('/users/' + username).once("value", snapshot => {
 				var info = snapshot.val();
 
-				console.log(info.username);
+				if(info.tags !== 0) {
+					tags = info.tags;
+				}
+
+				if(data.responses[0].webDetection.webEntities != undefined) {
+					for(var i = 0; i < data.responses[0].webDetection.webEntities.length; i++) {
+						if(tags.length == 100) {
+							tags.pop();
+						}
+
+						tags.push(data.responses[0].webDetection.webEntities[i].description);
+					}
+				}
+
+				database.ref('users/' + username).update({
+					tags: tags
+				}, function(err) {
+					if (err !== null) {
+						// Insert error handling here for register page
+						displayLog("Username already created.")
+						return;
+					} else {
+						$('#register_username').val("");
+						$('#register_password').val("");
+						$('input:checkbox').prop('checked', '');
+						$('input:radio').prop('checked', '');
+						displayLog("User successfully registered!");
+					}
+				});
 			});
         }
     });
