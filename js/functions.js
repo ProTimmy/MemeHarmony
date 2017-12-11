@@ -1,6 +1,7 @@
 var criticalSection = false;
 var lastValues = {};
 var apiKey = 'AIzaSyA5eT5cmEVop6msDBtveV6g0t4HyVRIGbM';
+matches = [];
 
 function getImages(imageArray, callback) {
     if(!criticalSection) {
@@ -98,6 +99,10 @@ function imageAnalyze(imgURL) {
 			});
         }
     });
+}
+
+function syncMatches() {
+
 }
 
 function shuffle(array) {
