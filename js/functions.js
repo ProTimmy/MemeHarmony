@@ -1,7 +1,6 @@
 var criticalSection = false;
 var lastValues = {};
 var apiKey = 'AIzaSyA5eT5cmEVop6msDBtveV6g0t4HyVRIGbM';
-matches = [];
 
 function getImages(imageArray, callback) {
     if(!criticalSection) {
@@ -63,26 +62,30 @@ function imageAnalyze(imgURL) {
 	    },
         success: function(data, status, xhr) {
 			// TODO: Extract keywords and add to profile
-			var tags = [];
 			database.ref('/users/' + username).once("value", snapshot => {
+				var updatedTags = [];
 				var info = snapshot.val();
 
 				if(info.tags !== 0) {
-					tags = info.tags;
+					updatedTags = info.tags;
 				}
 
 				if(data.responses[0].webDetection.webEntities != undefined) {
 					for(var i = 0; i < data.responses[0].webDetection.webEntities.length; i++) {
-						if(tags.length == 100) {
-							tags.pop();
+						if(updatedTags.indexOf(data.responses[0].webDetection.webEntities[i].description) !== -1) {
+							continue;
 						}
 
-						tags.push(data.responses[0].webDetection.webEntities[i].description);
+						if(updatedTags.length == 100) {
+							updatedTags.pop();
+						}
+
+						updatedTags.push(data.responses[0].webDetection.webEntities[i].description);
 					}
 				}
 
 				database.ref('users/' + username).update({
-					tags: tags
+					tags: updatedTags
 				}, function(err) {
 					if (err !== null) {
 						// Insert error handling here for register page
@@ -99,10 +102,6 @@ function imageAnalyze(imgURL) {
 			});
         }
     });
-}
-
-function syncMatches() {
-
 }
 
 function shuffle(array) {

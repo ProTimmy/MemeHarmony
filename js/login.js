@@ -57,6 +57,7 @@ $(document).ready(function() {
 		}
 
 		pwd = $('#register_password').val();
+		number = $("#register_phone").val();
 		gen = $("input[name='gen']:checked").val();
 		pref = $("input[name='pref']:checked");
 
@@ -71,6 +72,7 @@ $(document).ready(function() {
 			database.ref('users/' + username).set({
 				username: username,
 				password: hashedPassword,
+				number: number,
 				gender: gen,
 				preference: preferences,
 				tags: 0

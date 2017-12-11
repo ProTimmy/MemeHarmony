@@ -94,6 +94,41 @@ $(document).ready(function() {
             }
         }
     });
+
+	$(".sync").click(function() {
+		$(".match").remove();
+		$(".matches").append("<li class='match' id='loading'><h3>Loading...</h3></li>");
+
+		database.ref("users/" + username).once("value", snapshot => {
+			var userInfo = snapshot.val();
+
+			database.ref("users/").once("value", snapshot => {
+				var users = snapshot.val();
+				snapshot.forEach(function(user) {
+					var attr = user.val();
+					if(userInfo.username == attr.username) {
+						return;
+					}
+
+					if(userInfo.preference.indexOf(attr.gender) === -1) {
+						return;
+					}
+
+					var temp = [];
+					for(var i = 0; i < userInfo.tags.length; i++) {
+						for(var j = 0; j < attr.tags.length; j++) {
+							if(userInfo.tags[i] === attr.tags[j]) {
+								temp = [];
+								console.log("True");
+							}
+						}
+					}
+				});
+
+				$("#loading").remove();
+			});
+		});
+	});
 });
 
 function finishLoading(imageArray) {
