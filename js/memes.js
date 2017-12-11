@@ -118,10 +118,13 @@ $(document).ready(function() {
 					for(var i = 0; i < userInfo.tags.length; i++) {
 						for(var j = 0; j < attr.tags.length; j++) {
 							if(userInfo.tags[i] === attr.tags[j]) {
-								temp = [];
-								console.log("True");
+								temp.push(userInfo.tags[i]);
 							}
 						}
+					}
+
+					if(((temp.length / userInfo.tags.length) > 0.1) && ((temp.length / attr.tags.length) > 0.1)) {
+						$(".matches").append("<li class='match'><h3>" + attr.username + "</h3><h3>" + attr.number + "</h3></li>");
 					}
 				});
 
