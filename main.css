@@ -151,7 +151,7 @@ body {
 	transform: translateX(-50%);
 
 	max-width: 500px;
-	min-height: 500px;
+	min-height: 400px;
 	margin-top: 12em;
 
 	text-align: center;
@@ -171,6 +171,9 @@ body {
 
     max-height: 400px;
     max-width: 400px;
+
+    margin-top: 70px;
+    border-radius: 5px;
 
 }
 
