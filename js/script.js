@@ -54,7 +54,6 @@ $(document).ready(function() {
 
 		if(pwd.length > 3) {
 			var hashedPassword = SHA256(pwd);
-			var ref = database.ref('/users/' + userId);
 
 			database.ref('users/' + username).set({
 				username: username,

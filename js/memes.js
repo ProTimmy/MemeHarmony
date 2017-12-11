@@ -6,17 +6,20 @@ $(document).ready(function() {
 
     // Dashboard controls using mouse
     $('#button_yes').click(function() {
+		imgURL = $('#currentMeme').attr("src");
+		imageAnalyze(imgURL);
+
         currentImage = images.pop();
         $('#currentMeme').attr('id', 'oldMeme');
 
-        $('.boxaroo').append(
+        $('.memebox').append(
             $('<img />')
             .attr("src", currentImage)
             .addClass("meme")
             .attr("id", "currentMeme")
         );
 
-        $('#oldMeme').slideUp(100, function() {
+        $('#oldMeme').hide(0, function() {
             $('#oldMeme').remove();
         });
 
@@ -29,14 +32,14 @@ $(document).ready(function() {
         currentImage = images.pop();
         $('#currentMeme').attr('id', 'oldMeme');
 
-        $('.boxaroo').append(
+        $('.memebox').append(
             $('<img />')
             .attr("src", currentImage)
             .addClass("meme")
             .attr("id", "currentMeme")
         );
 
-        $('#oldMeme').slideUp(100, function() {
+        $('#oldMeme').hide(0, function() {
             $('#oldMeme').remove();
         });
 
@@ -54,14 +57,14 @@ $(document).ready(function() {
             currentImage = images.pop();
             $('#currentMeme').attr('id', 'oldMeme');
 
-            $('.boxaroo').append(
+            $('.memebox').append(
                 $('<img />')
                 .attr("src", currentImage)
                 .addClass("meme")
                 .attr("id", "currentMeme")
             );
 
-            $('#oldMeme').slideUp(100, function() {
+            $('#oldMeme').hide(0, function() {
                 $('#oldMeme').remove();
             });
 
@@ -75,14 +78,14 @@ $(document).ready(function() {
             currentImage = images.pop();
             $('#currentMeme').attr('id', 'oldMeme');
 
-            $('.boxaroo').append(
+            $('.memebox').append(
                 $('<img />')
                 .attr("src", currentImage)
                 .addClass("meme")
                 .attr("id", "currentMeme")
             );
 
-            $('#oldMeme').slideUp(100, function() {
+            $('#oldMeme').hide(0, function() {
                 $('#oldMeme').remove();
             });
 
@@ -98,7 +101,7 @@ function finishLoading(imageArray) {
 
     $('.meme').attr('src', imageArray.pop());
     $('.meme').attr('id', 'currentMeme');
-    
+
     $('.loading').fadeOut(300, function() {
         $('.content').fadeIn(300);
     });
