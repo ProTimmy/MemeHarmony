@@ -15,32 +15,34 @@ $(document).ready(function() {
 
 	// Login function
 	$('#login_button').click(function() {
-		if(this.password.value.length > 1) {
-			var userId = this.email.value.split(".")[0];
-			var email = this.email.value;
-			var state = this.state;
-			var hashedPassword = crypto.SHA256(this.password.value).toString();
-			var ref = fire.database().ref('/users/' + userId);
+		username = $('#register_username').val();
+		pwd = $('#register_password').val();
+
+		if(pwd.length > 3) {
+			var hashedPassword = SHA256(pwd);
+			var ref = fire.database().ref('/users/' + username);
 
 			ref.once("value", snapshot => {
 				var info = snapshot.val();
 				if(info === null) {
-					console.log("The read failed: invalid username");
+					displayLog("Invalid username");
 					return;
 				}
 
-				if(info.email === email && info.password === hashedPassword) {
-					that.setLogin(info.email, info.isAdmin);
+				if(info.username === username && info.password === hashedPassword) {
+					// TODO: Log in
 				} else {
-					alert("Incorrect password!");
+					displayLog("Incorrect password!");
 				}
 			});
+		} else {
+			displayLog("Password must be larger than 3 characters.")
 		}
 	});
 
 	// Register function
 	$('#register_button').click(function() {
-		email = $('#register_username').val();
+		username = $('#register_username').val();
 		pwd = $('#register_password').val();
 		gen = $("input[name='gen']:checked").val();
 		pref = $("input[name='pref']:checked");
@@ -50,13 +52,12 @@ $(document).ready(function() {
 			preferences.push(pref[i].value);
 		}
 
-		if(pwd.length > 1) {
-			var userId = email.split(".")[0];
+		if(pwd.length > 3) {
 			var hashedPassword = SHA256(pwd);
 			var ref = database.ref('/users/' + userId);
 
-			database.ref('users/' + userId).set({
-				email: email,
+			database.ref('users/' + username).set({
+				username: username,
 				password: hashedPassword,
 				gender: gen,
 				preference: preferences,
@@ -74,6 +75,8 @@ $(document).ready(function() {
 					displayLog("User successfully registered!");
 				}
 			});
+		} else {
+			displayLog("Password must be larger than 3 characters.")
 		}
 	});
 });
