@@ -41,7 +41,7 @@ body {
 }
 
 .logo {
-	
+
 }
 
 /* Login and register page */
@@ -346,7 +346,7 @@ h6{
 	display: none;
 }
 
-.login_container {
+.dashboard {
 	display: none;
 }
 
@@ -368,7 +368,6 @@ h6{
 	font-family: times, Times New Roman, times-roman, georgia, serif;
     color: white;
     margin: 0;
-    /*padding: 0px 0px 6px 0px;*/
 	padding-top: 10px;
 	padding-bottom: 10px;
     font-size: 30px;

@@ -44,24 +44,29 @@ function imageAnalyze(imgURL) {
 				"source": {
 					"imageUri": imgURL
 				}
-			},"features": [{
-				"type": "LANDMARK_DETECTION","maxResults": 1},{
-				"type": "WEB_DETECTION","maxResults": 2
-			}]
+			},"features": [
+				{"type": "LANDMARK_DETECTION","maxResults": 1},
+				{"type": "WEB_DETECTION","maxResults": 2},
+				{"type": "TEXT_DETECTION", "maxResults": 1}
+			]
 		}]
 	};
 
     $.ajax({
         type: 'POST',
 		url: 'https://vision.googleapis.com/v1/images:annotate?fields=responses&key=' + apiKey,
-        // dataType: 'json',
+        dataType: 'json',
         data: JSON.stringify(request),
 		headers: {
 	      "Content-Type": "application/json",
 	    },
         success: function(data, status, xhr) {
 			// TODO: Extract keywords and add to profile
-            console.log(data);
+			database.ref('/users/' + username).once("value", snapshot => {
+				var info = snapshot.val();
+
+				console.log(info.username);
+			});
         }
     });
 }
