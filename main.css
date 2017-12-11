@@ -40,7 +40,18 @@ body {
       animation: rainbow 18s ease infinite;
 }
 
+.logo {
+	
+}
+
 /* Login and register page */
+
+#login_logo {
+    position: absolute;
+    left: 57%;
+    transform: translateX(-50%);
+    top: 70px;
+}
 
 .form_button {
 	display: inline-block;
@@ -87,26 +98,31 @@ body {
 	text-align: center;
 }
 
-.memeboard {
-	position: relative;
-	margin: auto;
-    left: 40%;
-    transform: translateX(-50%);
+#dashboard_logo {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	top: 75px;
+}
 
-	min-height: 100px;
-	max-width: 800px;
+.memeboard {
+	position: absolute;
+	top: 0;
+	margin: auto;
+    left: 300px;
+
+	height: 100%;
+	width: calc(100% - 300px);
 
 	text-align: center;
 	align-items: center;
-
 }
 
 .meme_button {
     background-size: contain;
-	margin-top: 150px;
+	margin-top: calc(12em + 150px);
 
     padding: 0;
-    margin-bottom: 2%;
 
 	max-width: 150px;
 }
@@ -114,11 +130,13 @@ body {
 #button_no {
 	float: left;
     cursor: pointer;
+	padding-left: 100px;
 }
 
 #button_yes {
 	float: right;
     cursor: pointer;
+	padding-right: 100px;
 }
 
 .memebox {
@@ -128,14 +146,13 @@ body {
 
 	max-width: 500px;
 	min-height: 500px;
+	margin-top: 12em;
 
 	text-align: center;
 
 	background-color: black;
 	border-radius: 25px;
 	height: 100px;
-
-
 }
 
 .meme {
@@ -323,13 +340,6 @@ h6{
 
 #login{
     text-align: center;
-}
-
-#logo {
-    position: absolute;
-    left: 57%;
-    transform: translateX(-50%);
-    top: 70px;
 }
 
 .content {
