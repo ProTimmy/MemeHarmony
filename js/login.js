@@ -77,7 +77,7 @@ $(document).ready(function() {
 			}, function(err) {
 				if (err !== null) {
 					// Insert error handling here for register page
-					console.log(err);
+					displayLog("Username already created.")
 					return;
 				} else {
 					$('#register_username').val("");
