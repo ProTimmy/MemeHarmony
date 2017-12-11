@@ -169,12 +169,11 @@ body {
 	position: absolute;
 	margin: auto;
 
-    max-height: 400px;
+    max-height: 300px;
     max-width: 400px;
 
     margin-top: 70px;
     border-radius: 5px;
-
 }
 
 #currentMeme {
@@ -392,7 +391,7 @@ h6{
 	box-shadow: 0 -10px 20px -2px black;
 }
 
-.floating_meme {  
+.floating_meme {
     animation-name: floating;
     animation-duration: 3s;
     animation-iteration-count: infinite;
@@ -401,7 +400,7 @@ h6{
     margin-top: 5px;
 }
 
-.floating_login {  
+.floating_login {
     animation-name: floating;
     animation-duration: 3s;
     animation-iteration-count: infinite;
@@ -413,5 +412,5 @@ h6{
 @keyframes floating {
     from { transform: translate(0,  0px); }
     65%  { transform: translate(0, 15px); }
-    to   { transform: translate(0, -0px); }    
+    to   { transform: translate(0, -0px); }
 }
