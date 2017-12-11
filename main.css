@@ -326,9 +326,10 @@ h6{
 }
 
 #logo {
-    position: relative;
-    left: 50%;
+    position: absolute;
+    left: 57%;
     transform: translateX(-50%);
+    top: 70px;
 }
 
 .content {
