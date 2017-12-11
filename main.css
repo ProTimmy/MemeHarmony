@@ -350,7 +350,7 @@ h6{
     height: 100%;
 	width: 300px;
 	text-align: center;
-	box-shadow: 4px 0px 10px -2px black;
+	box-shadow: 2px 0px 20px -2px black;
 }
 
 .sync {
@@ -368,4 +368,6 @@ h6{
     background: red;
 	text-align: center;
 	cursor: pointer;
+	z-index: 100;
+	box-shadow: 0 -10px 20px -2px black;
 }
