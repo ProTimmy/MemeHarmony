@@ -98,7 +98,7 @@ body {
 
 	text-align: center;
 	align-items: center;
-	
+
 }
 
 .meme_button {
@@ -263,7 +263,7 @@ img {
     margin-bottom: 2%;
 }
 
-ul.a{
+ul.matches{
     list-style-type: none;
     text-align: left;
     left: 0;
@@ -289,21 +289,6 @@ h6{
     font-weight: bold;
     text-align: left;
     background: red;
-}
-
-h5{
-    font-family: times, Times New Roman, times-roman, georgia, serif;
-    /*color: rgb(230, 0, 0);*/
-    color: white;
-    margin: 0;
-    padding: 0px 0px 6px 0px;
-    font-size: 30px;
-    line-height: 44px;
-    letter-spacing: -2px;
-    font-weight: bold;
-    text-align: left;
-    background: red; 
-    border: double;
 }
 
 .myCheckbox {
@@ -350,11 +335,11 @@ h5{
 	display: none;
 }
 
-.dashboard {
+.login_container {
 	display: none;
 }
 
-.matches{
+.sidetab{
     background: white;
     float: left;
     margin: 0;
@@ -363,4 +348,24 @@ h5{
     position: fixed;
     left: 0;
     height: 100%;
+	width: 300px;
+	text-align: center;
+	box-shadow: 4px 0px 10px -2px black;
+}
+
+.sync {
+	font-family: times, Times New Roman, times-roman, georgia, serif;
+    color: white;
+    margin: 0;
+    /*padding: 0px 0px 6px 0px;*/
+	padding-top: 10px;
+	padding-bottom: 10px;
+    font-size: 30px;
+    line-height: 44px;
+    letter-spacing: -2px;
+    font-weight: bold;
+    text-align: left;
+    background: red;
+	text-align: center;
+	cursor: pointer;
 }
