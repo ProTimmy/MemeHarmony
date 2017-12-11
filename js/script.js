@@ -15,14 +15,18 @@ $(document).ready(function() {
 
 	// Login function
 	$('#login_button').click(function() {
-		username = $('#register_username').val();
-		pwd = $('#register_password').val();
+		username = $('#login_username').val();
+		if(username.length < 3) {
+			displayLog("Username is too short.");
+			return;
+		}
+
+		pwd = $('#login_password').val();
 
 		if(pwd.length > 3) {
 			var hashedPassword = SHA256(pwd);
-			var ref = fire.database().ref('/users/' + username);
 
-			ref.once("value", snapshot => {
+			database.ref('/users/' + username).once("value", snapshot => {
 				var info = snapshot.val();
 				if(info === null) {
 					displayLog("Invalid username");
@@ -31,6 +35,10 @@ $(document).ready(function() {
 
 				if(info.username === username && info.password === hashedPassword) {
 					// TODO: Log in
+					username = info.username;
+					$('.login_container').fadeOut(500, function() {
+						$('.dashboard').fadeIn(500);
+					});
 				} else {
 					displayLog("Incorrect password!");
 				}
@@ -43,6 +51,11 @@ $(document).ready(function() {
 	// Register function
 	$('#register_button').click(function() {
 		username = $('#register_username').val();
+		if(username.length < 3) {
+			displayLog("Username is too short.");
+			return;
+		}
+
 		pwd = $('#register_password').val();
 		gen = $("input[name='gen']:checked").val();
 		pref = $("input[name='pref']:checked");

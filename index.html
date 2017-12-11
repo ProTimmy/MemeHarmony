@@ -24,8 +24,8 @@
 			<img src="assets/MemeHarmonyLogo.png" alt="logo" id="logo" >
 			<div class="form_container">
 		        <div class="form" id="login">
-		            <label for="textboxes"><b>Username:  <input type="text" placeholder="Username" name="uname"></b></label>
-		            <label for="textboxes"><b>Password:  <input type="password" placeholder="********" name="psw"></b></label>
+		            <label for="textboxes"><b>Username:  <input type="text" id="login_username" placeholder="Username" name="uname"></b></label>
+		            <label for="textboxes"><b>Password:  <input type="password" id="login_password" placeholder="********" name="psw"></b></label>
 					<button type="submit" class="form_button" id="login_button">Login</button>
 					<button type="button" class="form_button" id="toRegister">Register</button>
 				</div>
@@ -35,17 +35,17 @@
 		            <div>
 		                <label class = "myCheckbox">
 		                    I am a:
-		                    <input type="radio" name="gen"> Memer
-		                    <input type="radio" name="gen"> Memette
-		                    <input type="radio" name="gen"> Apache Attack Helicopter
+		                    <input type="radio" name="gen" value="memer"> Memer
+		                    <input type="radio" name="gen" value="memette"> Memette
+		                    <input type="radio" name="gen" value="helicopter"> Apache Attack Helicopter
 		                </label>
 		            </div>
 		            <div>
 		                <label class = "myCheckbox">
 		                    Looking for a:
-		                    <input type="checkbox" name="pref"> Memer
-		                    <input type="checkbox" name="pref"> Memette
-		                    <input type="checkbox" name="pref"> Apache Attack Helicopter
+		                    <input type="checkbox" name="pref" value="memer"> Memer
+		                    <input type="checkbox" name="pref" value="memette"> Memette
+		                    <input type="checkbox" name="pref" value="helicopter"> Apache Attack Helicopter
 		                </label>
 		            </div>
 					<button type="submit" class="form_button" id="toLogin">Login</button>
